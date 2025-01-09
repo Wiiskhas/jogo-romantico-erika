@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Erika</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffe6e6;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+    }
+    h1 {
+      color: #ff4d4d;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button:hover {
+      background-color: #e63939;
+    }
+    button:focus {
+      outline: none;
+      border: 2px solid #ff4d4d;
+    }
+    .hidden {
+      display: none;
+    }
+    .home-container {
+      margin-top: 50px;
+    }
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="home" class="home-container">
+    <h1>Oii Ka ❤️</h1>
+    <p>Fiz esse quiz rapidinho para testar seu conhecimento, prepare-se: está muito difícil!</p>
+    <button type="button" onclick="startQuiz()">Começar Quiz</button>
+  </div>
+
+  <div id="question1" class="hidden">
+    <p>1 - Qual a música que me lembra você?</p>
+    <button type="button" onclick="checkAnswer(1, 'Proibida pra mim')">Proibida pra mim</button>
+    <button type="button" onclick="checkAnswer(1, 'Nocaute')">Nocaute</button>
+    <button type="button" onclick="checkAnswer(1, 'Calma Calabresoh')">Calma Calabresoh</button>
+  </div>
+
+  <div id="question2" class="hidden">
+    <p>2 - Acerte o seu cantor favorito:</p>
+    <button type="button" onclick="checkAnswer(2, 'Manuel gomes')">Manuel gomes</button>
+    <button type="button" onclick="checkAnswer(2, 'Sabotage')">Sabotage</button>
+    <button type="button" onclick="checkAnswer(2, 'Playboycarti')">Playboycarti</button>
+  </div>
+
+  <div id="question3" class="hidden">
+    <p>3 - Prefere me pagar um sorvete ou que eu use seus 30 reais com skin no Free Fire?</p>
+    <button type="button" onclick="checkAnswer(3, 'Sorvete')">Sorvete</button>
+    <button type="button" onclick="checkAnswer(3, 'Free fire')">Free fire</button>
+  </div>
+
+  <div id="surprise" class="hidden">
+    <h2>Parabéns, Erika! 🎉</h2>
+    <p>Você acertou todas as perguntas! Agora prepare-se para sua surpresa... Te amo muito! 💖</p>
+    <img src="sua-foto.jpg" alt="Nossa foto juntos">
+  </div>
+
+  <script>
+    const answers = {
+      1: 'Proibida pra mim',
+      2: 'Sabotage',
+      3: 'Sorvete'
+    };
+    let currentQuestion = 1;
+
+    function startQuiz() {
+      document.getElementById('home').classList.add('hidden');
+      document.getElementById('question1').classList.remove('hidden');
+    }
+
+    function checkAnswer(question, answer) {
+      if (answer === answers[question]) {
+        document.getElementById(`question${question}`).classList.add('hidden');
+        currentQuestion++;
+        if (currentQuestion <= 3) {
+          document.getElementById(`question${currentQuestion}`).classList.remove('hidden');
+        } else {
+          document.getElementById('surprise').classList.remove('hidden');
+        }
+      } else {
+        alert('Você errou! O jogo será reiniciado. Tente novamente!');
+        resetGame();
+      }
+    }
+
+    function resetGame() {
+      currentQuestion = 1;
+      document.getElementById('home').classList.remove('hidden');
+      document.getElementById('question1').classList.add('hidden');
+      document.getElementById('question2').classList.add('hidden');
+      document.getElementById('question3').classList.add('hidden');
+      document.getElementById('surprise').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
