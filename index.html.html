@@ -30,10 +30,6 @@
     button:hover {
       background-color: #e63939;
     }
-    button:focus {
-      outline: none;
-      border: 2px solid #ff4d4d;
-    }
     .hidden {
       display: none;
     }
@@ -53,27 +49,27 @@
   <div id="home" class="home-container">
     <h1>Oii Ka ❤️</h1>
     <p>Fiz esse quiz rapidinho para testar seu conhecimento, prepare-se: está muito difícil!</p>
-    <button type="button" onclick="startQuiz()">Começar Quiz</button>
+    <button onclick="startQuiz()">Começar Quiz</button>
   </div>
 
   <div id="question1" class="hidden">
     <p>1 - Qual a música que me lembra você?</p>
-    <button type="button" onclick="checkAnswer(1, 'Proibida pra mim')">Proibida pra mim</button>
-    <button type="button" onclick="checkAnswer(1, 'Nocaute')">Nocaute</button>
-    <button type="button" onclick="checkAnswer(1, 'Calma Calabresoh')">Calma Calabresoh</button>
+    <button onclick="checkAnswer(1, 'Proibida pra mim')">Proibida pra mim</button>
+    <button onclick="checkAnswer(1, 'Nocaute')">Nocaute</button>
+    <button onclick="checkAnswer(1, 'Calma Calabresoh')">Calma Calabresoh</button>
   </div>
 
   <div id="question2" class="hidden">
     <p>2 - Acerte o seu cantor favorito:</p>
-    <button type="button" onclick="checkAnswer(2, 'Manuel gomes')">Manuel gomes</button>
-    <button type="button" onclick="checkAnswer(2, 'Sabotage')">Sabotage</button>
-    <button type="button" onclick="checkAnswer(2, 'Playboycarti')">Playboycarti</button>
+    <button onclick="checkAnswer(2, 'Manuel gomes')">Manuel gomes</button>
+    <button onclick="checkAnswer(2, 'Sabotage')">Sabotage</button>
+    <button onclick="checkAnswer(2, 'Playboycarti')">Playboycarti</button>
   </div>
 
   <div id="question3" class="hidden">
     <p>3 - Prefere me pagar um sorvete ou que eu use seus 30 reais com skin no Free Fire?</p>
-    <button type="button" onclick="checkAnswer(3, 'Sorvete')">Sorvete</button>
-    <button type="button" onclick="checkAnswer(3, 'Free fire')">Free fire</button>
+    <button onclick="checkAnswer(3, 'Sorvete')">Sorvete</button>
+    <button onclick="checkAnswer(3, 'Free fire')">Free fire</button>
   </div>
 
   <div id="surprise" class="hidden">
@@ -121,3 +117,4 @@
   </script>
 </body>
 </html>
+
